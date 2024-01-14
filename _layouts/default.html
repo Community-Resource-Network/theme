@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <title>{{ page.title }} | Community Resource Network</title>
+  <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="{{ site.baseurl }}/assets/img/favicon.png" />
-  <meta name="twitter:title" content="Community Resource Network" />
+  <meta name="twitter:title" content="{{ site.title }}" />
   <link rel="icon" type="image/png" sizes="607x679" href="{{ site.baseurl }}/assets/img/favicon2.png" />
   <link rel="icon" type="image/png" sizes="607x679" href="{{ site.baseurl }}/assets/img/favicon2.png" />
   <link rel="icon" type="image/png" sizes="607x679" href="{{ site.baseurl }}/assets/img/favicon2.png" />
@@ -39,19 +39,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav mr-auto">
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="volunteer">Volunteer</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="partners">Partners</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="contact">Contact</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-          <!--<li class="nav-item" role="presentation"><a class="nav-link" href="/testimonials">Testimonials</a></li>-->
+          {% for item in site.navbar %}
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="{{ item.permalink }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
         <span class="navbar-text actions">
           <a class="btn btn-light action-button" role="button" href="donate">Give Now</a></span>
