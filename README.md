@@ -1,1 +1,1 @@
-# CRN website Jekyll theme
+# CRN Jekyll Theme
